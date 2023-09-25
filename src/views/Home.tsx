@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { type Podcast } from "../types";
+import { type Podcast } from "../types/types";
 import { PodcastList } from "../components/PodcastList";
 import { SearchBar } from "../components/SearchBar";
 
@@ -10,10 +10,19 @@ function Home() {
     const API_URL =
       "https://itunes.apple.com/us/rss/toppodcasts/limit=100/genre=1310/json";
 
-    fetch(API_URL)
-      .then(async (res) => await res.json())
-      .then((res) => setPodcasts(res.feed.entry))
-      .catch((err) => console.error(err));
+    const cachedData = localStorage.getItem("podcastsData");
+
+    if (cachedData) {
+      setPodcasts(JSON.parse(cachedData));
+    } else {
+      fetch(API_URL)
+        .then(async (res) => await res.json())
+        .then((res) => {
+          localStorage.setItem("podcastsData", JSON.stringify(res.feed.entry));
+          setPodcasts(res.feed.entry);
+        })
+        .catch((err) => console.error(err));
+    }
   }, []);
 
   return (
