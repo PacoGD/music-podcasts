@@ -1,0 +1,30 @@
+.header {
+  width: 100%;
+  margin: 20px 0 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+.headerTitle {
+  color: #66b0b8;
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.headerTitle:hover {
+  color: #66b0b8;
+  font-weight: 800;
+}

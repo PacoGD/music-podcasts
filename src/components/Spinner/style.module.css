@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #66b0b8;
+  position: absolute;
+}
+
+.animatedCircle {
+  width: 20px;
+  height: 20px;
+  background-color: #66b0b8;
+  border-radius: 50%;
+  animation: blink 1s infinite alternate; /* Animación de parpadeo */
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1; /* Opacidad completa */
+  }
+  100% {
+    opacity: 0.4; /* Opacidad transparente */
+  }
+}
