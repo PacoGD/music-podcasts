@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./views/Home";
-import Podcast from "./views/Podcast";
+import Podcast from "./views/Podcast/Podcast";
 import Episode from "./views/Episode";
 import { Header } from "./components/Header";
 import { LayoutContainer } from "./components/LayoutContainer";

@@ -1,34 +1,41 @@
 import { FunctionComponent } from "react";
-import { Link } from "react-router-dom";
-import { Podcast } from "../../types";
+import { IMArtist, IMImage, Icon } from "../../types/types";
 import styles from "./style.module.css";
 
-interface PodcastItemProps {
-  podcast: Podcast;
+interface PodcastCardProps {
+  img: IMImage[];
+  title: Icon;
+  autor: IMArtist;
+  summary: Icon;
 }
 
-export const PodcastItem: FunctionComponent<PodcastItemProps> = ({
-  podcast,
+export const PodcastCard: FunctionComponent<PodcastCardProps> = ({
+  img,
+  title,
+  autor,
+  summary,
 }) => {
+  function deleteOverFlowUrl(summary: Icon) {
+    const urlRegex = /https?:\/\/[^\s]+/g;
+    return summary.label.replace(urlRegex, "");
+  }
+
   return (
-    <li className={styles.li} key={podcast.id.label}>
-      <Link to={`/podcast/${podcast.id.attributes["im:id"]}`}>
-        <div className={styles.card}>
-          <img
-            className={styles.circle}
-            src={podcast["im:image"][2].label}
-            alt={podcast["im:image"][2].label}
-          />
-          <div className={styles.rectangle}>
-            <h2 className={styles.title}>
-              {podcast.title.label.toUpperCase()}
-            </h2>
-            <p className={styles.author}>
-              Author: {podcast["im:artist"].label}
-            </p>
-          </div>
-        </div>
-      </Link>
-    </li>
+    <div className={styles.container}>
+      <img src={img[2].label} alt={title.label} />
+      <div className={styles.line} />
+
+      <div className={styles.containerTitle}>
+        <p className={styles.title}>{title.label}</p>
+        <p className={styles.autor}>by {autor.label}</p>
+      </div>
+
+      <div className={styles.line} />
+
+      <div className={styles.containerDescription}>
+        <p className={styles.description}>Description: </p>
+        <p className={styles.summary}>{deleteOverFlowUrl(summary)}</p>
+      </div>
+    </div>
   );
 };
