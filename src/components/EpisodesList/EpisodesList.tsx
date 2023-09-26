@@ -1,6 +1,7 @@
 import { FunctionComponent } from "react";
 import styles from "./style.module.css";
 import { Episode } from "../../types/types";
+import { Link } from "react-router-dom";
 
 interface EpisodeListProps {
   results: Episode[];
@@ -37,7 +38,15 @@ function formatDuration(milliseconds: number) {
 }
 
 function addUrltoTrackName(episode: Episode) {
-  return episode.trackName;
+  return episode.artistName !== undefined ? (
+    <Link to={`/podcast/${episode.trackId}/episode/${episode.trackId}`}>
+      {`${episode.trackName} - ${episode.artistName}`}
+    </Link>
+  ) : (
+    <Link to={`/podcast/${episode.trackId}/episode/${episode.trackId}`}>
+      {episode.trackName}
+    </Link>
+  );
 }
 
 export const EpisodeList: FunctionComponent<EpisodeListProps> = (results) => {
