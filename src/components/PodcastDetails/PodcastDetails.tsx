@@ -17,6 +17,7 @@ export const PodcastDetails: FunctionComponent<PodcastDetailsProps> = ({
         title={podcast.title}
         autor={podcast["im:artist"]}
         summary={podcast.summary}
+        id={podcast.id.attributes["im:id"]}
       />
     </div>
   );

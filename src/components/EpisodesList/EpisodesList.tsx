@@ -11,11 +11,11 @@ interface EpisodeListProps {
 
 function addUrltoTrackName(episode: Episode) {
   return episode.artistName !== undefined ? (
-    <Link to={`/podcast/${episode.trackId}/episode/${episode.trackId}`}>
+    <Link to={`/podcast/${episode.collectionId}/episode/${episode.trackId}`}>
       {`${episode.trackName} - ${episode.artistName}`}
     </Link>
   ) : (
-    <Link to={`/podcast/${episode.trackId}/episode/${episode.trackId}`}>
+    <Link to={`/podcast/${episode.collectionId}/episode/${episode.trackId}`}>
       {episode.trackName}
     </Link>
   );
