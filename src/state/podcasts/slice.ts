@@ -1,17 +1,24 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { Podcast } from "../../types/types";
 
-const initialState = {
-  podcastList: [],
+interface PodcastState {
+  selectedPodcast: Podcast | null;
+}
+
+const initialState: PodcastState = {
+  selectedPodcast: null,
 };
 
 export const podcastsSlice = createSlice({
   name: "podcasts",
   initialState,
   reducers: {
-    addPodcasts: (state, action) => ({ ...state, podcastList: action.payload }),
+    setSelectedPodcast: (state, action: PayloadAction<Podcast | null>) => {
+      state.selectedPodcast = action.payload;
+    },
   },
 });
 
-export const { addPodcasts } = podcastsSlice.actions;
+export const { setSelectedPodcast } = podcastsSlice.actions;
 
 export default podcastsSlice.reducer;

@@ -2,6 +2,8 @@ import { FunctionComponent } from "react";
 import { Link } from "react-router-dom";
 import { Podcast } from "../../types/types";
 import styles from "./style.module.css";
+import { useAppDispatch } from "../../hooks/store";
+import { setSelectedPodcast } from "../../state/podcasts/slice";
 
 interface PodcastItemProps {
   podcast: Podcast;
@@ -10,10 +12,14 @@ interface PodcastItemProps {
 export const PodcastItem: FunctionComponent<PodcastItemProps> = ({
   podcast,
 }) => {
+  const dispatch = useAppDispatch();
+  const handlePodcastClick = () => {
+    dispatch(setSelectedPodcast(podcast));
+  };
   return (
     <li className={styles.li} key={podcast.id.label}>
       <Link to={`/podcast/${podcast.id.attributes["im:id"]}`}>
-        <div className={styles.card}>
+        <div className={styles.card} onClick={handlePodcastClick}>
           <img
             className={styles.circle}
             src={podcast["im:image"][2].label}

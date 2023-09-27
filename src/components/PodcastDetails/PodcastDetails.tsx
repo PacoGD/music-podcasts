@@ -18,7 +18,6 @@ export const PodcastDetails: FunctionComponent<PodcastDetailsProps> = ({
         autor={podcast["im:artist"]}
         summary={podcast.summary}
       />
-      {/* Lista de episodios */}
     </div>
   );
 };
