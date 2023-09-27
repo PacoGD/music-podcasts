@@ -1,4 +1,4 @@
-import { Podcast } from "../../../types/types";
+import { Podcast } from "../../types/types";
 
 export const loadPodcastsFromLocalStorage = (): Podcast[] | null => {
   const cachedData = localStorage.getItem("podcastsData");

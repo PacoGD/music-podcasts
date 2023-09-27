@@ -2,39 +2,11 @@ import { FunctionComponent } from "react";
 import styles from "./style.module.css";
 import { Episode } from "../../types/types";
 import { Link } from "react-router-dom";
+import { formatDate, formatDuration } from "./helper";
 
 interface EpisodeListProps {
   results: Episode[];
-}
-
-function formatDate(dateISO: Date) {
-  const date = new Date(dateISO);
-  const day = date.getDate();
-  const month = date.getMonth() + 1; // Sumamos 1 porque los meses comienzan en 0
-  const year = date.getFullYear();
-
-  return `${day.toString().padStart(2, "0")}/${month
-    .toString()
-    .padStart(2, "0")}/${year}`;
-}
-
-function formatDuration(milliseconds: number) {
-  const seconds = Math.floor(milliseconds / 1000);
-  const hours = Math.floor(seconds / 3600);
-  const minutes = Math.floor((seconds % 3600) / 60);
-  const remainingSeconds = seconds % 60;
-
-  let formattedTime = "";
-
-  if (hours > 0) {
-    formattedTime += `${hours.toString().padStart(2, "0")}:`;
-  }
-
-  formattedTime += `${minutes.toString().padStart(2, "0")}:${remainingSeconds
-    .toString()
-    .padStart(2, "0")}`;
-
-  return formattedTime;
+  trackCount?: number;
 }
 
 function addUrltoTrackName(episode: Episode) {
@@ -49,11 +21,14 @@ function addUrltoTrackName(episode: Episode) {
   );
 }
 
-export const EpisodeList: FunctionComponent<EpisodeListProps> = (results) => {
+export const EpisodeList: FunctionComponent<EpisodeListProps> = ({
+  results,
+  trackCount,
+}) => {
   return (
     <div className={styles.container}>
       <div className={styles.containerTitle}>
-        <p className={styles.title}>Episodes: 66</p>
+        <p className={styles.title}>Episodes: {trackCount || "-"} </p>
       </div>
       <div className={styles.containerEpisodes}>
         <table>
@@ -65,7 +40,7 @@ export const EpisodeList: FunctionComponent<EpisodeListProps> = (results) => {
             </tr>
           </thead>
           <tbody>
-            {results?.results?.map((row, index) => (
+            {results.map((row, index) => (
               <tr key={index} className={index % 2 === 0 ? styles.shaded : ""}>
                 <td>{addUrltoTrackName(row)}</td>
                 <td>{formatDate(row.releaseDate)}</td>

@@ -11,7 +11,10 @@ function Podcast() {
     episodeList && (
       <div className={styles.container}>
         <PodcastDetails podcast={selectedPodcast} />
-        <EpisodeList results={episodeList} />
+        <EpisodeList
+          results={episodeList.slice(1)}
+          trackCount={episodeList[0].trackCount}
+        />
       </div>
     )
   );

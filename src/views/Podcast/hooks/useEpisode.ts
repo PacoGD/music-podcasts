@@ -3,6 +3,11 @@ import { useParams } from "react-router-dom";
 import { Episode } from "../../../types/types";
 import { fetchPodcastEpisodes } from "../../../api/episode";
 import { useAppSelector } from "../../../hooks/store";
+import {
+  cachePodcastData,
+  getCachedPodcastData,
+  isCacheRecent,
+} from "../helper";
 
 export function useEpisode() {
   const selectedPodcast = useAppSelector(
@@ -16,8 +21,14 @@ export function useEpisode() {
   useEffect(() => {
     async function fetchData() {
       if (podcastId) {
-        const podcastDetails = await fetchPodcastEpisodes(podcastId);
-        setEpisodeList(podcastDetails.slice(1) || null);
+        if (isCacheRecent(podcastId)) {
+          setEpisodeList(getCachedPodcastData(podcastId));
+        } else {
+          const podcastDetails = await fetchPodcastEpisodes(podcastId);
+
+          cachePodcastData(podcastId, podcastDetails);
+          setEpisodeList(podcastDetails || null);
+        }
       }
     }
 

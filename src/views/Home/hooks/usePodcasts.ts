@@ -3,7 +3,7 @@ import { Podcast } from "../../../types/types";
 import {
   cachePodcastsInLocalStorage,
   loadPodcastsFromLocalStorage,
-} from "./helper";
+} from "../helper";
 import { fetchPodcasts } from "../../../api/podcasts";
 
 const usePodcasts = () => {
