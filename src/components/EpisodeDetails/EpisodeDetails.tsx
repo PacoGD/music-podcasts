@@ -12,10 +12,18 @@ function EpisodeDetails() {
   const episode: Episode | null = useAppSelector(
     (state) => state.episodes.episode
   );
+
+  const renderHTML = (html: string | undefined) => {
+    return { __html: html || "" };
+  };
+
   return (
     <div className={styles.container}>
       <p className={styles.title}>{formatTitle(episode)}</p>
-      <p className={styles.description}>{episode?.description}</p>
+      <div
+        className={styles.description}
+        dangerouslySetInnerHTML={renderHTML(episode?.description)}
+      />
       <audio controls>
         <source
           className={styles.sourceAudio}
