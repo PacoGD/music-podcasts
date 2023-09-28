@@ -5,6 +5,7 @@ import styles from "./style.module.css";
 
 interface PodcastListProps {
   podcasts: Podcast[];
+  searchTerm: string;
 }
 
 export const PodcastList: FunctionComponent<PodcastListProps> = ({

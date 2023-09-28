@@ -1,21 +1,25 @@
-import { FunctionComponent, useState } from "react";
+import { FunctionComponent } from "react";
 import styles from "./style.module.css";
 
-export const SearchBar: FunctionComponent = () => {
-  const [searchQuery, setSearchQuery] = useState<string>("");
+interface SearchBarProps {
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  value: string;
+  filteredPodcastsCount: number;
+}
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchQuery(e.target.value);
-  };
-
+export const SearchBar: FunctionComponent<SearchBarProps> = ({
+  onChange,
+  value,
+  filteredPodcastsCount,
+}) => {
   return (
     <div className={styles.container}>
-      <p className={styles.searches}>100</p>
+      <p className={styles.searches}>{filteredPodcastsCount}</p>
       <input
         type="text"
         className={styles.input}
-        value={searchQuery}
-        onChange={handleChange}
+        value={value}
+        onChange={onChange}
         placeholder="Filter podcasts..."
       />
     </div>
