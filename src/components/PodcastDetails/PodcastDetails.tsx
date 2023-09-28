@@ -4,12 +4,16 @@ import { PodcastCard } from "../PodcastCard";
 import styles from "./style.module.css";
 
 interface PodcastDetailsProps {
-  podcast: Podcast;
+  podcast: Podcast | null;
 }
 
 export const PodcastDetails: FunctionComponent<PodcastDetailsProps> = ({
   podcast,
 }) => {
+  if (!podcast) {
+    return null;
+  }
+
   return (
     <div className={styles.container}>
       <PodcastCard

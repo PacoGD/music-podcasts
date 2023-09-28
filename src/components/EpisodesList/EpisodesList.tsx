@@ -3,13 +3,15 @@ import styles from "./style.module.css";
 import { Episode } from "../../types/types";
 import { Link } from "react-router-dom";
 import { formatDate, formatDuration } from "./helper";
+import { useAppDispatch } from "../../hooks/store";
+import { addEpisode } from "../../state/episodes/slice";
 
 interface EpisodeListProps {
   results: Episode[];
   trackCount?: number;
 }
 
-function addUrltoTrackName(episode: Episode) {
+function addLinktoTrackName(episode: Episode) {
   return episode.artistName !== undefined ? (
     <Link to={`/podcast/${episode.collectionId}/episode/${episode.trackId}`}>
       {`${episode.trackName} - ${episode.artistName}`}
@@ -25,6 +27,10 @@ export const EpisodeList: FunctionComponent<EpisodeListProps> = ({
   results,
   trackCount,
 }) => {
+  const dispatch = useAppDispatch();
+  const handleSetEpisode = (episode: Episode) => {
+    dispatch(addEpisode(episode));
+  };
   return (
     <div className={styles.container}>
       <div className={styles.containerTitle}>
@@ -42,7 +48,9 @@ export const EpisodeList: FunctionComponent<EpisodeListProps> = ({
           <tbody>
             {results.map((row, index) => (
               <tr key={index} className={index % 2 === 0 ? styles.shaded : ""}>
-                <td>{addUrltoTrackName(row)}</td>
+                <td onClick={() => handleSetEpisode(row)}>
+                  {addLinktoTrackName(row)}
+                </td>
                 <td>{formatDate(row.releaseDate)}</td>
                 <td>{formatDuration(row.trackTimeMillis)}</td>
               </tr>

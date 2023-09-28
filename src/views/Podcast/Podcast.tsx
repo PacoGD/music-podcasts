@@ -1,11 +1,10 @@
 import { EpisodeList } from "../../components/EpisodesList";
 import { PodcastDetails } from "../../components/PodcastDetails";
-import { usePodcastData } from "./hooks/usePodcastData";
+import { useEpisode } from "./hooks/useEpisode";
 import styles from "./style.module.css";
 
 function Podcast() {
-  const { selectedPodcast, episodeList } = usePodcastData();
-
+  const { selectedPodcast, episodeList } = useEpisode();
   return (
     selectedPodcast &&
     episodeList && (
