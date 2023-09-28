@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Podcast } from "../../../types/types";
+import { Podcast } from "../../../types";
 import {
   cachePodcastsInLocalStorage,
   loadPodcastsFromLocalStorage,

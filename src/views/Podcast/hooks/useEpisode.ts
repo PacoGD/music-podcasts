@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Episode } from "../../../types/types";
+import { Episode } from "../../../types";
 import { fetchPodcastEpisodes } from "../../../api/episode";
 import { useAppDispatch, useAppSelector } from "../../../hooks/store";
 import {

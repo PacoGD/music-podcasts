@@ -1,4 +1,4 @@
-import { Episode } from "../../types/types";
+import { Episode } from "../../types";
 
 export function isCacheRecent(podcastId: string | undefined): boolean {
   const cachedPodcastDate = localStorage.getItem(`podcast_${podcastId}_date`);

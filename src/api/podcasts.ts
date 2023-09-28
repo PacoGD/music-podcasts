@@ -1,4 +1,4 @@
-import { Podcast } from "../types/types";
+import { Podcast } from "../types";
 
 export const fetchPodcasts = async (): Promise<Podcast[]> => {
   const API_URL =

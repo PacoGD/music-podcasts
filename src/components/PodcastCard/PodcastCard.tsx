@@ -1,5 +1,5 @@
 import { FunctionComponent } from "react";
-import { IMArtist, IMImage, Icon } from "../../types/types";
+import { IMArtist, IMImage, Icon } from "../../types";
 import styles from "./style.module.css";
 import { useNavigate } from "react-router-dom";
 

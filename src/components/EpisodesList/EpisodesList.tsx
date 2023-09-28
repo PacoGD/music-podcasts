@@ -1,6 +1,6 @@
 import { FunctionComponent } from "react";
 import styles from "./style.module.css";
-import { Episode } from "../../types/types";
+import { Episode } from "../../types";
 import { Link } from "react-router-dom";
 import { formatDate, formatDuration } from "./helper";
 import { useAppDispatch } from "../../hooks/store";

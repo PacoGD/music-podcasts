@@ -1,5 +1,5 @@
 import { FunctionComponent } from "react";
-import { type Podcast } from "../../types/types";
+import { type Podcast } from "../../types";
 import { PodcastItem } from "../PodcastItem";
 import styles from "./style.module.css";
 

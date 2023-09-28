@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { Podcast } from "../../types/types";
+import { Podcast } from "../../types";
 
 interface PodcastState {
   selectedPodcast: Podcast | null;

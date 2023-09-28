@@ -1,5 +1,5 @@
 import { useAppSelector } from "../../hooks/store";
-import { Episode } from "../../types/types";
+import { Episode } from "../../types";
 import styles from "./style.module.css";
 
 function formatTitle(episode: Episode | null) {

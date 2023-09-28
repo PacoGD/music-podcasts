@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { Episode } from "../../types/types";
+import { Episode } from "../../types";
 
 interface EpisodesState {
   episode: Episode | null;

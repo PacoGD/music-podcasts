@@ -1,6 +1,6 @@
 import { FunctionComponent } from "react";
 import { Link } from "react-router-dom";
-import { Podcast } from "../../types/types";
+import { Podcast } from "../../types";
 import styles from "./style.module.css";
 import { useAppDispatch } from "../../hooks/store";
 import { setSelectedPodcast } from "../../state/podcasts/slice";
