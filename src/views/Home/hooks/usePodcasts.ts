@@ -5,11 +5,16 @@ import {
   loadPodcastsFromLocalStorage,
 } from "../helper";
 import { fetchPodcasts } from "../../../api/podcasts";
+import { useAppDispatch } from "../../../hooks/store";
+import { startLoading, stopLoading } from "../../../state/loading/slice";
 
 const usePodcasts = () => {
   const [podcasts, setPodcastsState] = useState<Podcast[]>([]);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
+    dispatch(startLoading());
+
     const currentTime = new Date();
     const cachedPodcasts = loadPodcastsFromLocalStorage();
 
@@ -22,6 +27,7 @@ const usePodcasts = () => {
           24 * 60 * 60 * 1000
         ) {
           setPodcastsState(cachedPodcasts);
+          dispatch(stopLoading());
           return;
         }
       }
@@ -32,8 +38,11 @@ const usePodcasts = () => {
         setPodcastsState(fetchedPodcasts);
         cachePodcastsInLocalStorage(fetchedPodcasts);
       })
-      .catch((err) => console.error(err));
-  }, []);
+      .catch((err) => console.error(err))
+      .finally(() => {
+        dispatch(stopLoading());
+      });
+  }, [dispatch]);
 
   return podcasts;
 };
