@@ -20,4 +20,5 @@ export default {
     "node",
     "d.ts",
   ],
+  snapshotSerializers: ["@emotion/jest/serializer"],
 };

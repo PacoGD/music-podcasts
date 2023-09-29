@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PodcastDetails snapshot 1`] = `
+<div>
+  <div>
+    <div>
+      <img
+        alt="The Joe Budden Podcast - The Joe Budden Network"
+        src="https://is1-ssl.mzstatic.com/image/thumb/Podcasts113/v4/f2/21/fa/f221fabd-017f-5125-633b-f1fe4f39802a/mza_182995249085044287.jpg/170x170bb.png"
+      />
+      <div />
+      <div>
+        <p>
+          The Joe Budden Podcast - The Joe Budden Network
+        </p>
+        <p>
+          by 
+          The Joe Budden Network
+        </p>
+      </div>
+      <div />
+      <div>
+        <p>
+          Description: 
+        </p>
+        <p>
+          Tune into Joe Budden and his friends. Follow along the crazy adventures of these very random friends.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;

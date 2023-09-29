@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EpisodeDetails component snapshot 1`] = `
+<div>
+  <div>
+    <p />
+    <div />
+    <audio
+      controls=""
+    >
+      <source
+        type="audio/mpeg"
+      />
+    </audio>
+  </div>
+</div>
+`;

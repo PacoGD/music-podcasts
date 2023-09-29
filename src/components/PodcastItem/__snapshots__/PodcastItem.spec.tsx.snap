@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PodcastItem component  snapshot 1`] = `
+<div>
+  <li>
+    <a
+      href="/podcast/1535809341"
+    >
+      <div>
+        <img
+          alt="https://is1-ssl.mzstatic.com/image/thumb/Podcasts113/v4/f2/21/fa/f221fabd-017f-5125-633b-f1fe4f39802a/mza_182995249085044287.jpg/170x170bb.png"
+          src="https://is1-ssl.mzstatic.com/image/thumb/Podcasts113/v4/f2/21/fa/f221fabd-017f-5125-633b-f1fe4f39802a/mza_182995249085044287.jpg/170x170bb.png"
+        />
+        <div>
+          <h2>
+            THE JOE BUDDEN PODCAST - THE JOE BUDDEN NETWORK
+          </h2>
+          <p>
+            Author: 
+            The Joe Budden Network
+          </p>
+        </div>
+      </div>
+    </a>
+  </li>
+</div>
+`;

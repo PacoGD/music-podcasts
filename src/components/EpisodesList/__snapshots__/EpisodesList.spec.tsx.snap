@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EpisodeList component  snapshot 1`] = `
+<div>
+  <div>
+    <div>
+      <p>
+        Episodes: 
+        2
+         
+      </p>
+    </div>
+    <div>
+      <table>
+        <thead>
+          <tr>
+            <th>
+              Title
+            </th>
+            <th>
+              Date
+            </th>
+            <th>
+              Duration
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <a
+                href="/podcast/1437402802/episode/1437402802"
+              >
+                A History of Rock Music in 500 Songs - Andrew Hickey
+              </a>
+            </td>
+            <td>
+              28/09/2023
+            </td>
+            <td>
+              399:16:42
+            </td>
+          </tr>
+          <tr
+            class=""
+          >
+            <td>
+              <a
+                href="/podcast/1437402802/episode/1000629467257"
+              >
+                Episode 168: “I Say a Little Prayer” by Aretha Franklin
+              </a>
+            </td>
+            <td>
+              28/09/2023
+            </td>
+            <td>
+              399:16:42
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+`;
