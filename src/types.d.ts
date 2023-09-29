@@ -159,6 +159,7 @@ export interface Episode {
   episodeFileExtension?: EpisodeFileExtension;
   episodeContentType?: EpisodeContentType;
   previewUrl?: string;
+  contentAdvisoryRating?: string;
 }
 
 export enum ClosedCaptioning {
@@ -188,6 +189,7 @@ export interface GenreClass {
 
 export enum PrimaryGenreNameEnum {
   MusicCommentary = "Music Commentary",
+  MusicHistory = "MusicHistory",
 }
 
 export enum Kind {

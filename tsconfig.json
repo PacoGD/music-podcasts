@@ -6,6 +6,10 @@
     "module": "ESNext",
     "skipLibCheck": true,
 
+    /* Testing */
+    "esModuleInterop": true,
+    "types": ["node", "jest", "@testing-library/jest-dom"], // Agregado
+
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
