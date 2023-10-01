@@ -21,7 +21,7 @@ function Home() {
         value={searchTerm}
         filteredPodcastsCount={filteredPodcasts.length}
       />
-      <PodcastList podcasts={filteredPodcasts} searchTerm={searchTerm} />
+      <PodcastList podcasts={filteredPodcasts} />
     </>
   );
 }
