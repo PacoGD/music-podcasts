@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./views/Home/Home";
 import Podcast from "./views/Podcast/Podcast";
-import Episode from "./views/EpisodeView/EpisodeView";
+import Episode from "./views/Episode/Episode";
 import { Header } from "./components/Header";
 import { LayoutContainer } from "./components/LayoutContainer";
 import { Provider } from "react-redux";

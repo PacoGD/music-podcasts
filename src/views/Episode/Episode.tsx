@@ -3,7 +3,7 @@ import { PodcastDetails } from "../../components/PodcastDetails";
 import styles from "./style.module.css";
 import { useAppSelector } from "../../hooks/store";
 
-function EpisodeView() {
+function Episode() {
   const selectedPodcast = useAppSelector(
     (state) => state.podcasts.selectedPodcast
   );
@@ -16,4 +16,4 @@ function EpisodeView() {
   );
 }
 
-export default EpisodeView;
+export default Episode;
