@@ -43,7 +43,7 @@ To get the Music Podcasts App up and running, follow these steps:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/music-podcasts.git
+   git clone https://github.com/PacoGD/music-podcasts.git
    cd music-podcasts
    ```
 
